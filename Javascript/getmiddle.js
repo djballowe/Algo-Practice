@@ -1,14 +1,13 @@
 function getMiddle(s) {
-    let even;
-    let odd;
-    for (let i = 0; i < s.length; i++) {
+    let ans;
+    for (let i = 1; i < s.length; i++) {
         if (i % 2 == 0) {
-            even = s[i/2] + s[(i/2)+1];
+            ans = s[i/2] + s[(i/2)+1];
         } else if (i % 2 !== 0) {
-            odd = s[i/2];
+            ans = s[(i+1)/2];
         }
     }
-    return even;
+    return ans;
 }
 
-console.log(getMiddle('test'));
+console.log(getMiddle("middle"));
