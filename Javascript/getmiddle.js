@@ -1,13 +1,11 @@
 function getMiddle(s) {
-    let ans;
-    for (let i = 1; i < s.length; i++) {
-        if (i % 2 == 0) {
-            ans = s[i/2] + s[(i/2)+1];
-        } else if (i % 2 !== 0) {
-            ans = s[(i+1)/2];
-        }
-    }
+        if (s.length % 2 == 0) {
+            ans =  s[(s.length/2)-1] + s[s.length/2];
+        } else {
+            (s.length % 2 !== 0) 
+            ans = s[(s.length-1)/2];
+        } 
     return ans;
 }
 
-console.log(getMiddle("middle"));
+console.log(getMiddle("test"));
