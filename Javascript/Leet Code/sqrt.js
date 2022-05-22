@@ -3,33 +3,24 @@
  * @return {number}
  */
  var mySqrt = function(x) {
-    let count2 = 0;
-    let count3 = 0;
-    let count5 = 0;
-    while (x != 1) {
-        if (x % 2 === 0) {
-            x = x / 2
-            count2++;
-        } else if (x % 3 === 0) {
-            x = x / 3
-            count3++;
-        } else if (x % 5 === 0) {
-            x = x / 5
-            count5++;
+    if (x < 2) {
+        return x;
+    }
+    start = 0;
+    end = x;
+    while (start <= end) {
+        let mid = Math.floor((start + end)/2);
+        if (mid * mid === x) {
+            return mid;
+        } else if (mid * mid > x) {
+            end = x - 1;
+        } else {
+            start = x + 1;
         }
     }
-    if (count2 !== 0) {
-        two = count2 / 2;
-    }
-    if (count3 !== 0) {
-        three = count3 / 2;
-        factor3 = 3 * three;
-    }
-    ans = two;
-    return ans;
-    
+    return end; 
 };
 
-console.log(mySqrt(8));
+console.log(mySqrt(144));
 
 // square root (x) Leet Code 5/20
