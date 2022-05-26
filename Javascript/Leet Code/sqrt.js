@@ -6,19 +6,23 @@
     if (x < 2) {
         return x;
     }
+    let ans = 0;
     start = 0;
     end = x;
     while (start <= end) {
-        let mid = Math.floor((start + end)/2);
-        if (mid * mid === x) {
-            return mid;
-        } else if (mid * mid > x) {
-            end = x - 1;
+        mid = start + end / 2;
+        if (mid * mid == x) {
+            ans = mid;
+            break;
+        } 
+        if (mid * mid < x) {
+            start = mid +1;
+            ans = mid;
         } else {
-            start = x + 1;
+            end = mid - 1;
         }
     }
-    return end; 
+    return ans; 
 };
 
 console.log(mySqrt(144));
