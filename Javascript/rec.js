@@ -1,10 +1,7 @@
 function digital_root(n) {
-    let string = n.toString().split('');
-    
-    while (string.length != 1) {
-        string.pop();
+    for (let i = 0; i < n; i++) {
+        sum 
     }
-    return string.join('');
 }
 
 console.log(digital_root(456))
