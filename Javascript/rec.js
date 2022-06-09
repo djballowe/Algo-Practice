@@ -4,9 +4,11 @@ function digital_root(n) {
     for (let i = 0; i < arr.length; i++) {
        newNum += arr[i];
     }
-    console.log(arr);
-    if (newNum >= 10) {
-        digital_root(newNum);
+    
+    if (newNum < 10) {
+        return newNum;
+    } else {
+        return digital_root(newNum);
     }
 }
 
